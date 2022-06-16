@@ -1,0 +1,202 @@
+body {
+  text-align: center;
+  font-family: Avenir Next;
+}
+
+#headerImg {
+  margin: auto;
+  height: 125px;
+}
+
+#signUpHeader {
+  font-size: 22px;
+  padding-bottom: 13px;
+}
+
+#newSignUp {
+  z-index: 90;
+
+  background-color: #dee4f4;
+  height: 700px;
+  width: 800px;
+  margin: auto;
+  color: #1c1c59;
+  padding: 30px;
+}
+
+/* #signUpForm {
+  text-align: left;
+} */
+
+#signUpLabels {
+  display: flex;
+  justify-content: left;
+  padding-left: 250px;
+  font-size: 20px;
+  color: #1c1c59;
+}
+
+#signUpInterestsContainer {
+  text-align: left;
+}
+
+
+#signUpSubmit {
+  margin: 0;
+  background-color: #adb5c9;
+  color: #1c1c59;
+  padding: 18px;
+  border-radius: 30px;
+  border-color: #9097a8;
+  border-style: solid;
+  font-family: Avenir Next;
+  font-size: 17px;
+}
+
+#filterGroup {
+  display: flex;
+  justify-content: center;
+}
+
+#filterBtn {
+  margin-right: 12px;
+  color: #1c1c59;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 15px;
+}
+
+#filterItem {
+  padding: 10px 40px 10px 28px;
+  background-color: #8198d2;
+  margin: 15px 20px 30px 25px;
+  color: white;
+  font-size: 15px;
+  border-radius: 30px;
+  max-height: 30px;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+}
+
+#interestsFilterItem {
+  padding: 10px 40px 10px 28px;
+  background-color: #8198d2;
+  margin: 15px 20px 30px 25px;
+  color: white;
+  font-size: 15px;
+  border-radius: 30px;
+  z-index: 10;
+  /* box-shadow: 0 1px 2px 0 rgba(17, 14, 59, 0.2); */
+}
+
+#interestButton {
+  margin: 3px;
+  background-color: #9bb2ec;
+  border-radius: 30px;
+  color: white;
+  font-size: 14px;
+  border-color: transparent;
+  font-family: Avenir Next;
+}
+
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #a7c0ff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: 100vw;
+  border-top: 1px solid #93a6d6;
+}
+
+#navIcon {
+  /* display: flex;
+  flex-direction: row; */
+  /* margin: auto; */
+  max-height: 85px;
+  /* add percentages instead V */
+  padding-right: 10vw;
+  padding-left: 10vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+/* #navSpan { */
+  /* display: flex;
+  flex-direction: row; */
+  /* margin: auto; */
+  /* border: 3px solid black; */
+/* } */
+
+#peopleCards {
+  padding-bottom: 250px;
+}
+
+.personCard {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  display: inline-block;
+  padding: 20px 40px 100px 40px;
+  margin: 15px;
+  height: 370px;
+  width: 250px;
+  background-color: #dee4f4;
+  border-radius: 10px;
+}
+
+#personIcon {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border: 3px solid #8198d2;
+  border-radius: 10px;
+}
+
+#personHeader {
+  margin: 10px 0px -10px 0px;
+  font-size: 28px;
+}
+
+#personInterests {
+  margin: -10px 0px 25px 0px;
+}
+
+#heart {
+  height: 50px;
+}
+
+#chatContainer {
+  display: inline-flex;
+  border: 3px solid #1c1c59;
+  /* height: 890px;
+  width: 1634px; */
+}
+
+#chatList {
+  border-right: 3px solid #1c1c59;
+  /* padding: 400px 200px 418px 500px; */
+}
+
+#currentChat {
+  /* padding: 400px 200px 400px 500px; */
+  text-align: center;
+}
+
+#box {
+  display: inline-block;
+}
+
+#arrow {
+  display: inline-block;
+  height: 60px;
+  width: auto;
+}
+
+#sendButton {
+  display: inline-block;
+  margin: 10px -10px -200px 0;
+  background-color: transparent;
+  border-color: transparent;
+}
