@@ -7,7 +7,9 @@ function SignUp() {
     const [age, setAge] = useState("");
     const [location, setLocation] = useState("");
     const [profilePic, setProfilePic] = useState("");
-    const [interests, setInterests] = useState([]);
+    const [interest1, setInterest1] = useState();
+    const [interest2, setInterest2] = useState();
+    const [interest3, setInterest3] = useState();
 
     function onFirstNameChange(e) {
         setFirstName(e.target.value)
@@ -27,26 +29,18 @@ function SignUp() {
 
 
     // [...currentstate, newData]
-    let interestsArr= [];
 
-    function handleInterests(e) {
-        // let interestsArr= [];
-
-        if (e.target.checked === true) {
-            interestsArr.push(e.target.name);
-            // setInterests(interestsArr)
-        } else {
-            interestsArr = interestsArr.filter(function(interest) {
-                // remove interest from interests array
-                return e.target.name !== interest
-            })
-            // setInterests(interestsArr)
-        }
-        console.log(interestsArr);
-        setInterests(interestsArr);
+    function handleInterest1(e) {
+        setInterest1(e.target.value)
     }
 
-    console.log(interests)
+    function handleInterest2(e) {
+        setInterest2(e.target.value)
+    }
+
+    function handleInterest3(e) {
+        setInterest3(e.target.value)
+    }
 
     function onSignUpSubmit(event) {
         event.preventDefault();
@@ -57,7 +51,7 @@ function SignUp() {
             age: age,
             location: location,
             profilePic: profilePic,
-            interests: interests,
+            interests: [interest1, interest2, interest3],
         };
 
         fetch(`http://localhost:3000/profile`, {
@@ -95,31 +89,53 @@ function SignUp() {
                 <br></br>
                 <br></br>
                 <label id="signUpLabels">
-                interests:
-                    <div id="signUpInterestsContainer">
-                        <input type="checkbox" name="baking" id="signUpInterests" onClick={handleInterests}/>
-                        baking
-                        <input type="checkbox" name="biking" id="signUpInterests" onClick={handleInterests}/>
-                        biking
-                        <input type="checkbox" name="concerts" id="signUpInterests" onChange={handleInterests}/>
-                        concerts
-                        <br></br>
-                        <input type="checkbox" name="cooking" id="signUpInterests" onChange={handleInterests}/>
-                        cooking
-                        <input type="checkbox" name="drinking" id="signUpInterests" onChange={handleInterests}/>
-                        drinking
-                        <input type="checkbox" name="gaming" id="signUpInterests" onChange={handleInterests}/>
-                        gaming
-                        <br></br>
-                        <input type="checkbox" name="gardening" id="signUpInterests" onChange={handleInterests}/>
-                        gardening
-                        <input type="checkbox" name="hiking" id="signUpInterests" onChange={handleInterests}/>
-                        hiking
-                        <input type="checkbox" name="pilates" id="signUpInterests" onChange={handleInterests}/>
-                        pilates
-                        <input type="checkbox" name="pottery" id="signUpInterests" onChange={handleInterests}/>
-                        pottery
-                    </div>
+                    interest: 
+                    <select name={interest1} id="signUpInputs" value={interest1} onChange={handleInterest1}>
+                        <option name="baking">baking</option>
+                        <option>biking</option>
+                        <option>concerts</option>
+                        <option>cooking</option>
+                        <option>drinking</option>
+                        <option>gaming</option>
+                        <option>gardening</option>
+                        <option>hiking</option>
+                        <option>pilates</option>
+                        <option>pottery</option>
+                    </select>
+                </label>
+                <br></br>
+                <br></br>
+                <label id="signUpLabels">
+                    interest:
+                    <select name="name" id="signUpInputs" value={interest2} onChange={handleInterest2}>
+                        <option>baking</option>
+                        <option>biking</option>
+                        <option>concerts</option>
+                        <option>cooking</option>
+                        <option>drinking</option>
+                        <option>gaming</option>
+                        <option>gardening</option>
+                        <option>hiking</option>
+                        <option>pilates</option>
+                        <option>pottery</option>
+                    </select>
+                </label>
+                <br></br>
+                <br></br>
+                <label id="signUpLabels">
+                    interest: 
+                    <select name="name" id="signUpInputs" value={interest3} onChange={handleInterest3}>
+                        <option>baking</option>
+                        <option>biking</option>
+                        <option>concerts</option>
+                        <option>cooking</option>
+                        <option>drinking</option>
+                        <option>gaming</option>
+                        <option>gardening</option>
+                        <option>hiking</option>
+                        <option>pilates</option>
+                        <option>pottery</option>
+                    </select>
                 </label>
                 <br></br>
                 <br></br>

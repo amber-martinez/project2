@@ -16,7 +16,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home/>
           </Route>
           <Route exact path="/chat">
             <Chat />

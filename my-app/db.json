@@ -5,13 +5,14 @@
       "name": "Jean",
       "gender": "Male",
       "age": "28",
-      "location": "Sunset District",
+      "location": "Sunset-District",
       "image": "https://images.unsplash.com/photo-1535745318714-da922ca9cc81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
       "interests": [
         "hiking",
         "biking",
         "drinking"
-      ]
+      ],
+      "ageBracket": "26-30"
     },
     {
       "id": 2,
@@ -24,7 +25,8 @@
         "gaming",
         "cooking",
         "pottery"
-      ]
+      ],
+      "ageBracket": "26-30"
     },
     {
       "id": 3,
@@ -37,7 +39,8 @@
         "drinking",
         "concerts",
         "baking"
-      ]
+      ],
+      "ageBracket": "20-25"
     },
     {
       "id": 4,
@@ -50,20 +53,22 @@
         "gardening",
         "pottery",
         "biking"
-      ]
+      ],
+      "ageBracket": "26-30"
     },
     {
       "id": 5,
       "name": "Joe",
       "gender": "Male",
       "age": "31",
-      "location": "Marina District",
+      "location": "Marina-District",
       "image": "https://images.unsplash.com/flagged/photo-1575924795232-1893dbca02f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       "interests": [
         "hiking",
         "concerts",
         "cooking"
-      ]
+      ],
+      "ageBracket": "31-35"
     },
     {
       "id": 6,
@@ -76,20 +81,22 @@
         "baking",
         "gardening",
         "drinking"
-      ]
+      ],
+      "ageBracket": "26-30"
     },
     {
       "id": 7,
       "name": "Naomi",
       "gender": "Female",
       "age": "27",
-      "location": "Marina District",
+      "location": "Marina-District",
       "image": "https://images.unsplash.com/photo-1620613908146-bb9a8bbb7eca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
       "interests": [
         "drinking",
         "pilates",
         "hiking"
-      ]
+      ],
+      "ageBracket": "26-30"
     },
     {
       "id": 8,
@@ -102,7 +109,8 @@
         "pilates",
         "concerts",
         "gaming"
-      ]
+      ],
+      "ageBracket": "26-30"
     },
     {
       "id": 9,
@@ -115,20 +123,22 @@
         "concerts",
         "baking",
         "pottery"
-      ]
+      ],
+      "ageBracket": "31-35"
     },
     {
       "id": 10,
       "name": "Cecilia",
       "gender": "Female",
       "age": "26",
-      "location": "Richmond District",
+      "location": "Richmond-District",
       "image": "https://images.unsplash.com/photo-1624610261765-1649f2536026?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       "interests": [
         "drinking",
         "cooking",
         "biking"
-      ]
+      ],
+      "ageBracket": "26-30"
     }
   ],
   "messages": [
@@ -157,10 +167,14 @@
     }
   ],
   "profile": {
-    "firstName": "",
-    "age": "",
-    "location": "",
-    "profilePic": "",
-    "interests": []
+    "firstName": "Amber",
+    "age": "32",
+    "location": "Castro",
+    "profilePic": "https://media-exp1.licdn.com/dms/image/C5603AQGc8pho8nKVZg/profile-displayphoto-shrink_800_800/0/1624043088359?e=1659571200&v=beta&t=Ap_8fMpYSarG0Vz1deQ4ZINlDb8H-bTDaph2077X8yU",
+    "interests": [
+      "gaming",
+      "cooking",
+      "gardening"
+    ]
   }
 }

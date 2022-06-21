@@ -6,7 +6,9 @@ function Person({ name, gender, age, location, image, interests }) {
 
     let heartState = heart ? "https://i.imgur.com/VABEYSH.png" : "https://i.imgur.com/itp4mJL.png"
 
-    function onClickHeart() {
+    function onClickHeart(e) {
+        // console.log(e.target.parentElement.childNodes[1])
+        console.log(e.target.parentElement)
         setHeart(!heart)
     }
 
