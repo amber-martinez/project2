@@ -3,6 +3,16 @@ body {
   font-family: Avenir Next;
 }
 
+#editProfileButton {
+  background-color: #8198d2;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  font-size: 15px;
+  font-family: Avenir Next;
+  border-color: transparent;
+  border-radius: 30px;
+}
+
 #headerImg {
   margin: auto;
   height: 125px;
@@ -15,7 +25,6 @@ body {
 
 #newSignUp {
   z-index: 90;
-
   background-color: #dee4f4;
   height: 700px;
   width: 800px;

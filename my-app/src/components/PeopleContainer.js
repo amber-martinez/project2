@@ -1,37 +1,25 @@
 import React, { useEffect, useState } from "react";
-import Person from "./Person"
+import Person from "./Person";
 
 
-function PeopleContainer() {
+function PeopleContainer({ people }) {
 
     const [locationFilterState, setLocationFilterX] = useState(false);
     const [interestsFilterState, setInterestsFilterX] = useState(false);
     const [ageFilterState, setAgeFilterX] = useState(false);
-    const [people, setPeople] = useState([])
     const [filteredPeople, setFilteredPeople] = useState([]);
-
-    useEffect(() => {
-      fetch(`http://localhost:3000/people`)
-      .then((r) => r.json())
-      .then(data => setPeople(data))
-    }, [])
-
-    const peopleGroup = filteredPeople.map(person => (
-        <Person
-        key={person.id}
-        id={person.id}
-        name={person.name}
-        gender={person.gender}
-        age={person.age}
-        location={person.location}
-        image={person.image}
-        interests={person.interests}
-        />
-    ))
+    const [filterState, setFilterState] = useState("All")
 
     let locationFilterX = locationFilterState ? "🔽" : "▶️";
     let interestsFilterX = interestsFilterState ? "🔽" : "▶️";
     let ageFilterX = ageFilterState ? "🔽" : "▶️";
+
+
+    useEffect(() => {
+        if (filterState === "All") {
+            setFilteredPeople(people)
+        }
+    })
 
     function handleLocationFilter(e) {
         e.preventDefault();
@@ -54,6 +42,7 @@ function PeopleContainer() {
 // filter options buttons
     let interests = (
         <strong>
+            <button id="interestButton" onClick={handleIntClick}>all</button>
             <button id="interestButton" onClick={handleIntClick}>baking</button>
             <button id="interestButton" onClick={handleIntClick}>biking</button>
             <button id="interestButton" onClick={handleIntClick}>concerts</button><br></br>
@@ -70,6 +59,7 @@ function PeopleContainer() {
 
     let locations = (
         <strong>
+            <button id="interestButton" onClick={handleLocClick}>all</button>
             <button id="interestButton" onClick={handleLocClick}>Marina-District</button>
             <button id="interestButton" onClick={handleLocClick}>Mission-District</button>
             <button id="interestButton" onClick={handleLocClick}>Nopa</button><br></br>
@@ -84,6 +74,7 @@ function PeopleContainer() {
 
     let ages = (
         <strong>
+            <button id="interestButton" onClick={handleAgeClick}>all</button>
             <button id="interestButton" onClick={handleAgeClick}>20-25</button>
             <button id="interestButton" onClick={handleAgeClick}>26-30</button>
             <button id="interestButton" onClick={handleAgeClick}>31-35</button><br></br>
@@ -94,16 +85,21 @@ function PeopleContainer() {
 // filter functions
     function handleLocClick(e) {
         const peopleLocFilter = people.filter(person => {
-            if (person.location === e.target.innerText) {
+            if (e.target.innerText === "all") {
+                return person
+            } else if (person.location === e.target.innerText) {
                 return person
             }
         })
+        setFilterState("Location");
         setFilteredPeople(peopleLocFilter);
     }
 
     function handleIntClick(e) {
         const peopleIntFilter = people.filter(person => {
-            if (person.interests[0] === e.target.innerText) {
+            if (e.target.innerText === "all") {
+                return person
+            } else if (person.interests[0] === e.target.innerText) {
                 return person
             } else if (person.interests[1] === e.target.innerText) {
                 return person
@@ -111,12 +107,15 @@ function PeopleContainer() {
                 return person
             }
         })
+        setFilterState("Interests");
         setFilteredPeople(peopleIntFilter);
     }
 
     function handleAgeClick(e) {
         const peopleAgeFilter = people.filter(person => {
-            if (person.ageBracket === e.target.innerText) {
+            if (e.target.innerText === "all") {
+                return person
+            } else if (person.ageBracket === e.target.innerText) {
                 return person
             } else if (person.ageBracket === e.target.innerText) {
                 return person
@@ -124,8 +123,23 @@ function PeopleContainer() {
                 return person
             }
         })
+        setFilterState("Age");
         setFilteredPeople(peopleAgeFilter);
     }
+    
+
+    const peopleGroup = filteredPeople.map(person => (
+        <Person
+        key={person.id}
+        id={person.id}
+        name={person.name}
+        gender={person.gender}
+        age={person.age}
+        location={person.location}
+        image={person.image}
+        interests={person.interests}
+        />
+    ))
 
     return (
         <span id="peopleContainer">
@@ -147,6 +161,7 @@ function PeopleContainer() {
             </span>
         </span>
         <span id="peopleCards">
+            {}
             {peopleGroup}
         </span>
         </span>

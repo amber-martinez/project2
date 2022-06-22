@@ -27,6 +27,7 @@ function Profile() {
                 <p id="personLocation">{profileData.location}</p>
                 <p id="personInterests">{profileData.interests}</p>
         </div>
+        <button id="editProfileButton">edit profile</button>
         </div>
     )
 
