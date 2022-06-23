@@ -3,8 +3,9 @@ import SignUp from "./SignUp";
 
 function Profile() {
 
-    const [profileData, setProfileData] = useState({})
-    const [profileState, setProfileState] = useState()
+    const [profileData, setProfileData] = useState({});
+    const [profileState, setProfileState] = useState();
+    const [editProfileState, setEditProfileState] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:3000/profile`)
@@ -18,6 +19,16 @@ function Profile() {
         }
     }, [profileData])
 
+    function openProfileEditor() {
+        setEditProfileState(!editProfileState)
+    }
+
+    const profileEditor = (
+        <div>
+            <SignUp />
+        </div>
+    )
+
 
     const signedUp = (
         <div className="personCard">
@@ -27,19 +38,20 @@ function Profile() {
                 <p id="personLocation">{profileData.location}</p>
                 <p id="personInterests">{profileData.interests}</p>
         </div>
-        <button id="editProfileButton">edit profile</button>
+        <button id="editProfileButton" onClick={openProfileEditor}>edit profile</button>
         </div>
     )
 
     const notSignedUp = (
-        <div>
+        <span id="editProfileBox">
             <SignUp />
-        </div>
+        </span>
     )
 
     return (
         <div>
             {profileState ? signedUp : notSignedUp}
+            {editProfileState ? profileEditor : null}
         </div>
     )
 }

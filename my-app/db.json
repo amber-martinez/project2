@@ -180,13 +180,13 @@
   ],
   "profile": {
     "firstName": "Amber",
-    "age": "32",
-    "location": "Castro",
+    "age": "30",
+    "location": "Mission-District",
     "profilePic": "https://media-exp1.licdn.com/dms/image/C5603AQGc8pho8nKVZg/profile-displayphoto-shrink_800_800/0/1624043088359?e=1659571200&v=beta&t=Ap_8fMpYSarG0Vz1deQ4ZINlDb8H-bTDaph2077X8yU",
     "interests": [
-      "gaming",
-      "cooking",
-      "gardening"
+      "drinking",
+      "hiking",
+      "biking"
     ]
   }
 }

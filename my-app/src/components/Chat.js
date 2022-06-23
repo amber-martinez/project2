@@ -1,33 +1,27 @@
 import React, { useState, useEffect } from "react";
-import CurrentChat from "./ChatForm";
-import ChatList from "./ChatList";
 
 function Chat() {
 
-    const [messages, setYourMessages] = useState([])
-
+    const [currentChat, setCurrentChat] = useState();
+    const [people, setPeople] = useState([])
+  
     useEffect(() => {
-        fetch(`http://localhost:3000/messages`)
-        .then(r => r.json())
-        .then(data => setYourMessages(data))
+      fetch(`http://localhost:3000/people`)
+      .then((r) => r.json())
+      .then(data => setPeople(data))
     }, [])
 
-    console.log(messages)
-
-    function handleAddMessage(submitMsg) {
-        setYourMessages([...messages, submitMsg])
-    }
+    const peopleIcons = people.map(person => (
+        <span id="chatIconGroup">
+            <img src={person.image} id="chatIcon"></img>
+            <p>{person.name}</p>
+        </span>
+    ))
 
     return (
         <div>
-            <span id="chatContainer">
-                <ChatList />
-            <div>
-                {messages.map(message => (
-                    <p key={message.id}>{message.message}</p>
-                ))}
-            </div>
-                <CurrentChat handleAddMessage={handleAddMessage} messages={messages}/>
+            <span>
+                {peopleIcons}
             </span>
         </div>
     )

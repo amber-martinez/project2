@@ -3,6 +3,23 @@ body {
   font-family: Avenir Next;
 }
 
+#chatIcon {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+#chatIconGroup {
+  display: inline-block;
+  padding: 15px;
+}
+
+#editProfileBox {
+  z-index: 9;
+  position: absolute;
+}
+
 #editProfileButton {
   background-color: #8198d2;
   padding: 8px 15px 8px 15px;
