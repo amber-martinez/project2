@@ -3,6 +3,57 @@ body {
   font-family: Avenir Next;
 }
 
+#chatBoxOutline {
+  border: 2px solid #1c1c59;
+  display: inline-block;
+  position: relative;
+  margin-top: 20px;
+  height: 700px;
+  width: 1300px;
+  /* padding: 300px 650px 400px 650px; */
+}
+
+#chatSendButton {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#chatTypeBoxWrapper {
+  position: absolute;
+  bottom: 42px;
+  left: 11%;
+}
+
+#chatTypeBox {
+  height: 50px;
+  width: 875px;
+  border-radius: 27px;
+  border-color: #1c1c59;
+  font-size: 18px;
+  padding-left: 18px;
+  font-family: Avenir Next;
+}
+
+#chatTitle {
+  margin-top: 40px;
+  font-family: Avenir Next;
+  font-size: 22px;
+}
+
+#chatSendWrapper {
+  position: absolute;
+  display: inline-block;
+  position: absolute;
+  bottom: 15px;
+  right: 11%;
+}
+
+#chatArrow {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
 #chatIcon {
   border-radius: 50%;
   height: 100px;
@@ -14,6 +65,12 @@ body {
   display: inline-block;
   padding: 15px;
 }
+
+/* #chatMessageBar {
+  bottom: -515px;
+  text-align: center;
+  position: relative;
+} */
 
 #editProfileBox {
   z-index: 9;
@@ -33,6 +90,46 @@ body {
 #headerImg {
   margin: auto;
   height: 125px;
+}
+
+/* left */
+#leftWrapper {
+  flex-direction: column-reverse;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#leftContainer {
+  margin: 27px 150px;
+  display: inline-flex;
+}
+#leftPhotoCropper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+#leftIcon {
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
+}
+#leftBubble {
+/* text */
+  font-family: Gill Sans;
+  font-size: 22px;
+/* bubbles */
+  position: relative;
+  min-width: 60px;
+  max-width: 700px;
+  margin: 4px 8px;
+  padding: 14px 18px;
+  background-color: #fff8d1;
+  border-radius: 16px 16px 16px 0;
+  border: 1px solid #fff8d1;
 }
 
 #signUpHeader {
@@ -190,23 +287,6 @@ body {
 
 #heart {
   height: 50px;
-}
-
-#chatContainer {
-  display: inline-flex;
-  border: 3px solid #1c1c59;
-  /* height: 890px;
-  width: 1634px; */
-}
-
-#chatList {
-  border-right: 3px solid #1c1c59;
-  /* padding: 400px 200px 418px 500px; */
-}
-
-#currentChat {
-  /* padding: 400px 200px 400px 500px; */
-  text-align: center;
 }
 
 #box {

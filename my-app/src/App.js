@@ -9,6 +9,14 @@ import { Route, Switch } from "react-router-dom";
 
 function App() {
 
+  const [people, setPeople] = useState([])
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/people`)
+    .then((r) => r.json())
+    .then(data => setPeople(data))
+  }, [])
+
   return (
     <div className="App">
       <Header />
@@ -19,7 +27,7 @@ function App() {
             <Home/>
           </Route>
           <Route exact path="/chat">
-            <Chat />
+            <Chat people={people}/>
           </Route>
           <Route exact path="/profile">
             <Profile />

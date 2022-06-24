@@ -144,38 +144,38 @@
   "messages": [
     {
       "id": 1,
-      "message": "hey!"
+      "recipient": "",
+      "message": ""
     },
     {
-      "message": "hey",
+      "recipient": "Santiago",
+      "message": "hey santi",
       "id": 2
     },
     {
-      "message": "what's your favorite color?",
+      "recipient": "Santiago",
+      "message": "hey santi",
       "id": 3
     },
     {
-      "message": "yes",
+      "recipient": "Xavier",
+      "message": "hi",
       "id": 4
     },
     {
-      "message": "no",
+      "recipient": "Joe",
+      "message": "hi Joe",
       "id": 5
     },
     {
-      "message": "no",
+      "recipient": "Joe",
+      "message": "hows it going",
       "id": 6
     },
     {
-      "message": "no",
+      "recipient": "Xavier",
+      "message": "hi",
       "id": 7
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
     }
   ],
   "profile": {
