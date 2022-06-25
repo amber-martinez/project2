@@ -6,37 +6,79 @@ function Chat({ people }) {
     const [currentChatPerson, setCurrentChatPerson] = useState('Send a message!');
     const [yourMessages, setYourMessages] = useState([]);
     const [loadMessages, setLoadMessages] = useState([]);
-    const [chatterPic, setChatterPic] = useState('');
-    // const [chatName, setChatName] = useState('Send a message!');
+    const [chatterPic, setChatterPic] = useState('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    const [yourProfileData, setYourProfileData] = useState([]);
+    const [greetingData, setGreetingData] = useState('');
+    const [greetingLine, setGreetingLine] = useState('');
+    const [chatStart, setChatStart] = useState(false);
+
+    useEffect(() => {
+        fetch(`https://www.greetingsapi.com/random`)
+        .then(r => r.json())
+        .then(data => setGreetingData(data))
+    }, [currentChatPerson])
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/profile`)
+        .then(r => r.json())
+        .then(data => setYourProfileData(data))
+    }, [])
 
     useEffect(() => {
         fetch(`http://localhost:3000/messages`)
         .then(r => r.json())
         .then(data => setYourMessages(data))
-    }, [])
+    }, [loadMessages])
 
     function handleChatIconClick(e) {
         console.log(e.target)
     }
 
     function handleChatNameClick(e) {
-        setChatterPic(e.target.parentElement.firstChild.src)
-
-        setCurrentChatPerson(e.target.innerText)
+        setChatterPic(e.target.parentElement.firstChild.src);
+        setCurrentChatPerson(e.target.innerText);
+        setChatStart(true);
 
         const filteredMsgs = yourMessages.filter(msg => {
-            if (msg.recipient === currentChatPerson) {
+            if (msg.recipient === e.target.innerText) {
                 return msg
             }
         })
 
         const postMessages = filteredMsgs.map(msg => (
-            <p key={msg.id}>
-                {msg.message}
-            </p>
+            <div id='rightBubblesWrapper' key={msg.id}>
+            <div id='rightContainer'>
+                <div id='rightBubble'>
+                    <p>{msg.message}</p>
+                </div>
+                <div id='rightPhotoCropper'>
+                    <img id="rightIcon" src={yourProfileData.profilePic}></img>
+                </div>
+            </div>
+            </div>
         ))
+        setLoadMessages(postMessages);
 
-        setLoadMessages(postMessages)
+        setGreetingLine(`${greetingData.greeting}! That's how you say "hello" in ${greetingData.language} 🙂 How are you?`);
+
+    }
+
+    function handleNewMessage(newMessage) {
+
+        const newMessagePost = (
+            <div id='rightBubblesWrapper' key={newMessage.id}>
+            <div id='rightContainer'>
+                <div id='rightBubble'>
+                    <p>{newMessage.message}</p>
+                </div>
+                <div id='rightPhotoCropper'>
+                    <img id="rightIcon" src={yourProfileData.profilePic}></img>
+                </div>
+            </div>
+            </div>
+        )
+
+        setLoadMessages([...loadMessages, newMessagePost]);
 
     }
 
@@ -51,10 +93,9 @@ function Chat({ people }) {
         <div>
             <span>
                 {peopleIcons}
-                {loadMessages}
             </span>
             <div>
-                <ChatBox currentChatPerson={currentChatPerson} people={people} chatterPic={chatterPic}/>
+                <ChatBox currentChatPerson={currentChatPerson} chatterPic={chatterPic} loadMessages={loadMessages} greetingLine={greetingLine} chatStart={chatStart} handleNewMessage={handleNewMessage}/>
             </div>
         </div>
     )

@@ -7,9 +7,9 @@ function SignUp() {
     const [age, setAge] = useState("");
     const [location, setLocation] = useState("");
     const [profilePic, setProfilePic] = useState("");
-    const [interest1, setInterest1] = useState();
-    const [interest2, setInterest2] = useState();
-    const [interest3, setInterest3] = useState();
+    const [interest1, setInterest1] = useState('baking');
+    const [interest2, setInterest2] = useState('baking');
+    const [interest3, setInterest3] = useState('baking');
 
     function onFirstNameChange(e) {
         setFirstName(e.target.value)
@@ -155,8 +155,6 @@ function SignUp() {
             {ifUser ? null : newUserSignUp }
         </div>
     )
-
-    // https://media1.popsugar-assets.com/files/thumbor/hnVKqXE-xPM5bi3w8RQLqFCDw_E/475x60:1974x1559/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2019/09/09/023/n/1922398/9f849ffa5d76e13d154137.01128738_/i/Taylor-Swift.jpg
 
 }
 

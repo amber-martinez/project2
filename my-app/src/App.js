@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
-import PeopleContainer from './components/PeopleContainer';
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Chat from "./components/Chat";
@@ -9,12 +8,19 @@ import { Route, Switch } from "react-router-dom";
 
 function App() {
 
-  const [people, setPeople] = useState([])
+  const [people, setPeople] = useState([]);
+  const [yourProfile, setYourProfile] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:3000/people`)
     .then((r) => r.json())
     .then(data => setPeople(data))
+  }, [])
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/profile`)
+    .then(r => r.json())
+    .then(data => setYourProfile(data))
   }, [])
 
   return (
@@ -30,7 +36,7 @@ function App() {
             <Chat people={people}/>
           </Route>
           <Route exact path="/profile">
-            <Profile />
+            <Profile yourProfile={yourProfile}/>
           </Route>
         </Switch>
       </div>

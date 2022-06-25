@@ -5,7 +5,6 @@ function Profile() {
 
     const [profileData, setProfileData] = useState({});
     const [profileState, setProfileState] = useState();
-    const [editProfileState, setEditProfileState] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:3000/profile`)
@@ -19,17 +18,6 @@ function Profile() {
         }
     }, [profileData])
 
-    function openProfileEditor() {
-        setEditProfileState(!editProfileState)
-    }
-
-    const profileEditor = (
-        <div>
-            <SignUp />
-        </div>
-    )
-
-
     const signedUp = (
         <div className="personCard">
                 <img src={profileData.profilePic} id="personIcon"></img>
@@ -37,8 +25,7 @@ function Profile() {
                 <h1 id="personHeader">{profileData.firstName}, {profileData.age}</h1>
                 <p id="personLocation">{profileData.location}</p>
                 <p id="personInterests">{profileData.interests}</p>
-        </div>
-        <button id="editProfileButton" onClick={openProfileEditor}>edit profile</button>
+            </div>
         </div>
     )
 
@@ -51,7 +38,6 @@ function Profile() {
     return (
         <div>
             {profileState ? signedUp : notSignedUp}
-            {editProfileState ? profileEditor : null}
         </div>
     )
 }

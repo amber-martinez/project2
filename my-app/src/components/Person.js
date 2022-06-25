@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Person({ name, gender, age, location, image, interests }) {
+function Person({ name, age, location, image, interests }) {
 
     const [heart, setHeart] = useState(false)
 

@@ -1,35 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-function ChatBox({ currentChatPerson, people, chatterPic }) {
+function ChatBox({ currentChatPerson, chatterPic, loadMessages, greetingLine, chatStart, handleNewMessage }) {
 
-    const [youProfileData, setYouProfileData] = useState([]);
     const [messageTyping, setMessageTyping] = useState('');
-    const [yourMessages, setYourMessages] = useState([]);
-
-
-    useEffect(() => {
-        fetch(`http://localhost:3000/profile`)
-        .then(r => r.json())
-        .then(data => setYouProfileData(data))
-    }, [])
-
-    useEffect(() => {
-        fetch(`http://localhost:3000/messages`)
-        .then(r => r.json())
-        .then(data => setYourMessages(data))
-    }, [])
-
-
-    // const yourMessagesGroup = yourMessages.filter(msg => {
-    //     if (msg.recipient === currentChatPerson) {
-    //         console.log(msg.recipient, currentChatPerson, msg.message)
-    //         return msg
-    //     }
-    // })
-
-    // console.log(yourMessagesGroup)
-
-    // console.log(yourMessages)
 
 
     function handleMessageTyping(e) {
@@ -52,35 +25,33 @@ function ChatBox({ currentChatPerson, people, chatterPic }) {
             body: JSON.stringify(newMessageData),
           })
             .then((r) => r.json())
-            .then((newMessage) => console.log(newMessage));
+            .then((newMessage) => handleNewMessage(newMessage));
     }
 
-    const filteredMsgs = yourMessages.filter(msg => {
-        if (msg.recipient === currentChatPerson) {
-            return msg
-        }
-    })
-
-    // console.log(filteredMsgs)
+    const bubbles = (
+        <div id="chatBubblesWrapper">
+                <div id='leftWrapper'>
+                <div id='leftContainer'>
+                    <div id='leftPhotoCropper'>
+                        <img id="leftIcon" src={chatterPic}></img>
+                    </div>
+                    <div id='leftBubble'>
+                        <p>{greetingLine}</p>
+                    </div>
+                </div>
+                </div>
+                <div id='rightWrapper'>
+                    {loadMessages}
+                </div>
+            </div>
+    )
 
     return (
         <span id="chatBoxOutline">
-            
-            <div id="chatTitle"><strong>{currentChatPerson}</strong></div>
-            <div id='leftWrapper'>
-            <div id='leftContainer'>
-                <div id='leftPhotoCropper'>
-                    <img id="leftIcon" src={chatterPic}></img>
-                </div>
-                <div id='leftBubble'>
-                    <p>Hey. whats up?</p>
-                </div>
+            <div id="chatTitle">
+                <strong>{currentChatPerson}</strong>
             </div>
-            </div>
-
-            <div id='rightWrapper'></div>
-
-
+            {chatStart ? bubbles : null}
             <div id="chatFooter">
                 <form onSubmit={onMessageSubmit}>
                 <span id='chatTypeBoxWrapper'>
@@ -91,6 +62,7 @@ function ChatBox({ currentChatPerson, people, chatterPic }) {
                 </div>
                 </form>
             </div>
+
         </span>
     )
 }
