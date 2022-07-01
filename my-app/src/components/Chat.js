@@ -3,7 +3,7 @@ import ChatBox from "./ChatBox"
 
 function Chat({ people }) {
 
-    const [currentChatPerson, setCurrentChatPerson] = useState('Send a message!');
+    const [currentChatPerson, setCurrentChatPerson] = useState('Click on someone to send a message!');
     const [yourMessages, setYourMessages] = useState([]);
     const [loadMessages, setLoadMessages] = useState([]);
     const [chatterPic, setChatterPic] = useState('https://www.transparenttextures.com/patterns/asfalt-light.png');
@@ -78,9 +78,17 @@ function Chat({ people }) {
             </div>
         )
 
-        setLoadMessages([...loadMessages, newMessagePost]);
+        setLoadMessages(() => [...loadMessages, newMessagePost]);
+    
+        // let scroll_to_bottom = document.getElementById('chatBubblesWrapper');
+        // function scrollBottom(element) {
+        //     element.scroll({ top: element.scrollHeight, behavior: "smooth"})
+        // }
+
+        // scrollBottom(scroll_to_bottom)
 
     }
+
 
     const peopleIcons = people.map(person => (
         <span id="chatIconGroup" key={person.name}>

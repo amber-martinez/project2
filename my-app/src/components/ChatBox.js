@@ -11,6 +11,7 @@ function ChatBox({ currentChatPerson, chatterPic, loadMessages, greetingLine, ch
 
     function onMessageSubmit(e) {
         e.preventDefault();
+        setMessageTyping("");
 
         const newMessageData = {
             recipient: currentChatPerson,
@@ -46,6 +47,21 @@ function ChatBox({ currentChatPerson, chatterPic, loadMessages, greetingLine, ch
             </div>
     )
 
+    const typeBoxAndSend = (
+
+        <div>
+            <span id='chatTypeBoxWrapper'>
+                <input id="chatTypeBox" type="text" placeholder="Type your message here..." value={messageTyping} onChange={handleMessageTyping}></input>
+            </span>
+            <div id='chatSendWrapper'>
+                <button id='chatSendButton' onClick={onMessageSubmit}><img id='chatArrow' src='https://i.imgur.com/qvdKR4d.png'></img></button>
+            </div>
+        </div>
+
+    )
+
+            
+
     return (
         <span id="chatBoxOutline">
             <div id="chatTitle">
@@ -54,12 +70,7 @@ function ChatBox({ currentChatPerson, chatterPic, loadMessages, greetingLine, ch
             {chatStart ? bubbles : null}
             <div id="chatFooter">
                 <form onSubmit={onMessageSubmit}>
-                <span id='chatTypeBoxWrapper'>
-                    <input id="chatTypeBox" type="text" placeholder="Type your message here..." value={messageTyping} onChange={handleMessageTyping}></input>
-                </span>
-                <div id='chatSendWrapper'>
-                    <button id='chatSendButton' onClick={onMessageSubmit}><img id='chatArrow' src='https://i.imgur.com/qvdKR4d.png'></img></button>
-                </div>
+                {chatStart ? typeBoxAndSend : null}
                 </form>
             </div>
 

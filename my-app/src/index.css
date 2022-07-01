@@ -10,6 +10,7 @@ body {
   margin-top: 20px;
   height: 700px;
   width: 1300px;
+  overflow-y: scroll;
   /* padding: 300px 650px 400px 650px; */
 }
 

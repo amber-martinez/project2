@@ -148,121 +148,40 @@
       "message": ""
     },
     {
-      "recipient": "Xavier",
-      "message": "I'm good, how about you?",
+      "recipient": "Santiago",
+      "message": "Hey! I'm good!",
       "id": 2
     },
     {
-      "recipient": "Xavier",
-      "message": "I'm good, how about you?",
+      "recipient": "Daniela",
+      "message": "I'm good!",
       "id": 3
     },
     {
-      "recipient": "Xavier",
-      "message": "hi",
+      "recipient": "Jean",
+      "message": "Hey! I'm good :)",
       "id": 4
     },
     {
-      "recipient": "Levi",
-      "message": "hey",
+      "recipient": "Xavier",
+      "message": "Great!",
       "id": 5
     },
     {
       "recipient": "Santiago",
-      "message": "good!",
+      "message": "How about you?",
       "id": 6
-    },
-    {
-      "recipient": "Santiago",
-      "message": "good!",
-      "id": 7
-    },
-    {
-      "recipient": "Santiago",
-      "message": "good!",
-      "id": 8
-    },
-    {
-      "recipient": "Santiago",
-      "message": "good!",
-      "id": 9
-    },
-    {
-      "recipient": "Daniela",
-      "message": "good",
-      "id": 10
-    },
-    {
-      "recipient": "Daniela",
-      "message": "great!",
-      "id": 11
-    },
-    {
-      "recipient": "Levi",
-      "message": "good",
-      "id": 12
-    },
-    {
-      "recipient": "Levi",
-      "message": "good",
-      "id": 13
-    },
-    {
-      "recipient": "Levi",
-      "message": "good",
-      "id": 14
-    },
-    {
-      "recipient": "Levi",
-      "message": "good",
-      "id": 15
-    },
-    {
-      "recipient": "Xavier",
-      "message": "yes",
-      "id": 16
-    },
-    {
-      "recipient": "Xavier",
-      "message": "hi",
-      "id": 17
-    },
-    {
-      "recipient": "Xavier",
-      "message": "hi",
-      "id": 18
-    },
-    {
-      "recipient": "Santiago",
-      "message": "lolol",
-      "id": 19
-    },
-    {
-      "recipient": "Daniela",
-      "message": "yaasss",
-      "id": 20
-    },
-    {
-      "recipient": "Jean",
-      "message": "hey Jean! i'm good",
-      "id": 21
-    },
-    {
-      "recipient": "Xavier",
-      "message": "hey",
-      "id": 22
-    },
-    {
-      "recipient": "Xavier",
-      "message": "yes",
-      "id": 23
-    },
-    {
-      "recipient": "Maya",
-      "message": "gooooood",
-      "id": 24
     }
   ],
   "profile": {
+    "firstName": "Amber",
+    "age": "25",
+    "location": "Castro",
+    "profilePic": "https://media-exp1.licdn.com/dms/image/C5603AQGc8pho8nKVZg/profile-displayphoto-shrink_800_800/0/1624043088359?e=1659571200&v=beta&t=Ap_8fMpYSarG0Vz1deQ4ZINlDb8H-bTDaph2077X8yU",
+    "interests": [
+      "concerts",
+      "baking",
+      "gardening"
+    ]
   }
 }
